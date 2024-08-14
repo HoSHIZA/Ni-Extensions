@@ -1,0 +1,21 @@
+﻿{
+    "name": "com.ni-games.extensions",
+    "version": "1.0.0",
+    "displayName": "Ni Extensions",
+    "description": "Powerful and useful extensions for most Unity classes and structures.",
+    "unity": "2019.3",
+    "documentationUrl": "",
+    "dependencies": {},
+    "optionalDependencies": {},
+    "keywords": [
+        "NiGames",
+        "NiExtensions",
+        "Extensions",
+        "Unity Extensions"
+    ],
+    "author": {
+        "name": "HoSHIZA",
+        "email": "hoshiza78@gmail.com",
+        "url": "https://github.com/HoSHIZA"
+    }
+}
