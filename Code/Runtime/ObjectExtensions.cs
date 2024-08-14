@@ -251,7 +251,7 @@ namespace NiGames.Extensions
         /// <summary>
         /// Converts the object to another type, if possible.
         /// </summary>
-        public static T To<T>(this object @this) 
+        public static T ConvertTo<T>(this object @this) 
         {
             switch (@this)
             {
