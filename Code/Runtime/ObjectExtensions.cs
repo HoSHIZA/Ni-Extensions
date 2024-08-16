@@ -1,15 +1,19 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+
+#if !NIGAMES_OBJECT_EXTENSIONS_DISABLE
+using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
+#endif
 
 namespace NiGames.Extensions
 {
     [PublicAPI]
     public static class ObjectExtensions
     {
+#if !NIGAMES_OBJECT_EXTENSIONS_DISABLE
         /// <summary>
         /// Creates a deep copy of an object, including public and private fields, as well as nested objects.
         /// </summary>
@@ -38,7 +42,6 @@ namespace NiGames.Extensions
             return (T)clone;
         }
         
-#if !NIEXTENSIONS_DISABLE_MONAD
         #region With/When/If
 
         /// <summary>
@@ -115,7 +118,7 @@ namespace NiGames.Extensions
         }
 
         #endregion
-
+        
         #region Throw
 
         /// <summary>
@@ -161,7 +164,7 @@ namespace NiGames.Extensions
         }
 
         #endregion
-
+        
         #region Map
 
         /// <summary>
@@ -278,7 +281,7 @@ namespace NiGames.Extensions
         }
 
         #endregion
-
+        
         #region TryCatch
 
         /// <summary>
@@ -295,23 +298,6 @@ namespace NiGames.Extensions
                 exceptionHandler?.Invoke(ex);
             }
             return @this;
-        }
-
-        #endregion
-
-        #region IEnumerable
-
-        /// <summary>
-        /// Performs an action for each item in the collection.
-        /// </summary>
-        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> @this, Action<T> action)
-        {
-            var arr = @this.ToArray();
-            foreach (var item in arr)
-            {
-                action?.Invoke(item);
-            }
-            return arr;
         }
 
         #endregion

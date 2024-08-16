@@ -11,7 +11,7 @@ namespace NiGames.Extensions
         {
             var charArray = input.ToCharArray();
             Array.Reverse(charArray);
-            return string.Concat(charArray);
+            return new string(charArray);
         }
     }
 }
