@@ -77,9 +77,15 @@ namespace NiGames.Extensions
         /// </summary>
         public static void Bounce(this Rigidbody rb, Vector3 normal, float bounciness)
         {
+#if UNITY_6000
+            var velocity = rb.linearVelocity;
+            
+            rb.linearVelocity = Vector3.Reflect(velocity, normal) * bounciness;
+#else
             var velocity = rb.velocity;
             
             rb.velocity = Vector3.Reflect(velocity, normal) * bounciness;
+#endif
         }
     }
 }

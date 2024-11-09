@@ -114,6 +114,22 @@ namespace NiGames.Extensions
         
         #endregion
         
+        #region As
+
+        /// <summary>
+        /// Returns the color as a hexadecimal string in the format "RRGGBB".
+        /// </summary>
+        [MethodImpl(256)]
+        public static string AsHtmlStringRGB(this Color32 color) => ColorUtility.ToHtmlStringRGB(color);
+
+        /// <summary>
+        /// Returns the color as a hexadecimal string in the format "RRGGBBAA".
+        /// </summary>
+        [MethodImpl(256)]
+        public static string AsHtmlStringRGBA(this Color32 color) => ColorUtility.ToHtmlStringRGBA(color);
+
+        #endregion
+        
         public static Color32 With(this Color32 color, short r = -1, short g = -1, short b = -1, short a = -1)
         {
             if (r >= 0) color.r = (byte) Math.Clamp(r, byte.MinValue, byte.MaxValue);
